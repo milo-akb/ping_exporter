@@ -1,9 +1,22 @@
-FROM python:3.10-slim
+# Use slim Python image
+FROM python:3.11-slim
 
+# Install ping and dependencies
+RUN apt-get update && apt-get install -y iputils-ping gcc libyaml-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
 WORKDIR /app
 
+# Copy project files
 COPY ping_exporter.py .
+COPY config.yaml .
 
-RUN pip install prometheus_client
+# Install Python dependencies
+RUN pip install --no-cache-dir prometheus_client watchdog pyyaml
 
+# Expose Prometheus port
+EXPOSE 8000
+
+# Run the exporter
 CMD ["python", "ping_exporter.py"]
