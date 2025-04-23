@@ -7,4 +7,4 @@ This is a prometheus exporter that provides:
 * Success rate [0-1]
 * Packet loss [percentage]
 
-  It is deployable either by running the program or as a docker container.
+It is deployable either by running the program or as a docker container.
