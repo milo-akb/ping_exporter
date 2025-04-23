@@ -1,0 +1,13 @@
+targets:
+  - address: 8.8.8.8
+    labels:
+      name: google_dns
+      location: global
+  - address: 1.1.1.1
+    labels:
+      name: cloudflare_dns
+      location: global
+  - address: 127.0.0.1
+    labels:
+      name: loopback
+      location: local
