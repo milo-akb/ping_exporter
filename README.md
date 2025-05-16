@@ -1,5 +1,4 @@
-# ping_exporter
-Prometheus ping exporter
+# Prometheus ping exporter
 
 This is a prometheus exporter that provides:
 * Latency (average, minimum, and maximum) [ms]
